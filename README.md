@@ -6,6 +6,7 @@ Static browser-local MVP for turning public-safe SaaS incident notes or draft ou
 
 - Landing: `https://ert93333-ops.github.io/incident-customer-update-briefs/`
 - Checklist: `https://ert93333-ops.github.io/incident-customer-update-briefs/saas-incident-communication-template.html`
+- Public Gist checklist: `https://gist.github.com/ert93333-ops/d43065668e8b29eee7e2875d043b245d`
 
 ## Scope
 
