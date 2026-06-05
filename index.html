@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Incident Customer Update Briefs | SaaS incident communication template</title>
+  <meta name="description" content="Paste public-safe SaaS incident notes and generate a customer-ready outage update brief, missing-context checklist, next-update cadence, channel consistency handoff, and tone/privacy risk flags.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Incident Customer Update Briefs">
+  <meta property="og:description" content="Turn outage notes into a customer-ready incident update before silence creates ticket floods.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ert93333-ops.github.io/incident-customer-update-briefs/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://ert93333-ops.github.io/incident-customer-update-briefs/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#workflow">Skip to workflow</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" aria-label="Incident Customer Update Briefs home">Incident Customer Update Briefs</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#workflow">Workflow</a>
+        <a href="#pricing">Pricing</a>
+        <a href="saas-incident-communication-template.html">Template</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <h1>Turn outage notes into a customer-ready incident update before silence creates ticket floods.</h1>
+          <p class="hero-subtitle">Paste public-safe incident notes or draft outage updates and get a missing-context checklist, customer-safe status update outline, next-update cadence, channel consistency handoff, and tone/privacy risk flags before a human publishes.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#workflow">Generate incident update brief</a>
+            <a class="button secondary" href="saas-incident-communication-template.html">View incident checklist</a>
+          </div>
+        </div>
+        <aside class="brief-preview" aria-label="Brief preview">
+          <p class="brief-label">Checks before publishing</p>
+          <strong>Affected component, customer impact, state, mitigation, next update time, owner, channel consistency, caveats, and privacy risk.</strong>
+          <p>No monitoring integration. No status-page OAuth. No private logs. No customer list storage.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="workflow" class="section">
+      <div class="shell section-grid">
+        <div>
+          <h2>Turn vague outage updates into precise customer communication briefs.</h2>
+          <p>Use public-safe notes only. Do not paste private logs, customer lists, support-ticket exports, internal incident channels, stack traces, IP addresses, credentials, personal data, or confidential customer details.</p>
+          <div class="input-grid">
+            <label>Incident notes or draft customer update<textarea id="incident-notes" placeholder="Example: Checkout API errors started at 09:20 UTC for EU customers."></textarea></label>
+            <label>Affected service, component, feature, region, or customer group<textarea id="impact-notes" class="short-textarea" placeholder="Example: checkout API, EU region, paid customers using card update flow."></textarea></label>
+            <label>Customer-visible impact, severity, symptoms, or degraded behavior<textarea id="symptom-notes" class="short-textarea" placeholder="Example: payment update attempts fail with a 500 error; existing access is unaffected."></textarea></label>
+            <label>Incident state<textarea id="state-notes" class="short-textarea" placeholder="Example: investigating, identified, monitoring, resolved, scheduled maintenance, or post-incident."></textarea></label>
+            <label>Mitigation, workaround, customer action, or no-action-needed statement<textarea id="mitigation-notes" class="short-textarea" placeholder="Example: retry later; no customer action needed; team rolled back a deploy."></textarea></label>
+            <label>Next update, cadence, owner, communication lead, or escalation<textarea id="owner-notes" class="short-textarea" placeholder="Example: next update at 10:00 UTC; support lead owns customer updates."></textarea></label>
+            <label>Status page, email, in-app banner, support macro, or channel consistency note<textarea id="channel-notes" class="short-textarea" placeholder="Example: status page and in-app banner use the same impact and next-update time."></textarea></label>
+            <label>Security, data-loss, privacy, or billing-impact caveat<textarea id="caveat-notes" class="short-textarea" placeholder="Example: no evidence of data loss; billing impact under review; do not overstate."></textarea></label>
+            <label>Resolution, follow-up, or postmortem commitment<textarea id="followup-notes" class="short-textarea" placeholder="Example: post-incident summary within 48 hours if impact exceeds 30 minutes."></textarea></label>
+            <label>Tone / privacy notes<textarea id="tone-notes" class="short-textarea" placeholder="Example: no vendor blame, no unsupported ETA, no private log excerpts, no false reassurance."></textarea></label>
+          </div>
+          <div class="form-actions">
+            <button class="button secondary" type="button" id="sample-button">Load sample incident</button>
+            <button class="button primary" type="button" id="generate-button">Generate incident update brief</button>
+          </div>
+          <p class="copy-status" id="workflow-error" role="status" aria-live="polite"></p>
+        </div>
+        <aside class="output-panel" id="output-panel" aria-live="polite">
+          <div class="status-pill"><span class="status-dot"></span><span id="output-status">Waiting for incident notes</span></div>
+          <div id="brief-output" class="brief-output"><p>Paste public-safe incident context to generate a customer-ready incident update brief.</p></div>
+          <button class="button small" type="button" id="copy-brief" disabled>Copy brief</button>
+          <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <div class="shell">
+        <h2>Pay only if this helps reduce ticket floods and protect customer trust during real incidents.</h2>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Starter</h3>
+            <p class="price">$19/month</p>
+            <p>For founders, support leads, and customer-facing engineers reviewing ad hoc incident updates.</p>
+            <button class="button full plan-button" type="button" data-plan="Starter">Request Starter access</button>
+          </article>
+          <article class="price-card">
+            <h3>Team</h3>
+            <p class="price">$79/month</p>
+            <p>For support, CS, SRE, DevOps, and incident management teams standardizing customer-facing incident communication.</p>
+            <button class="button full plan-button" type="button" data-plan="Team">Request Team access</button>
+          </article>
+        </div>
+        <form class="handoff-panel" id="intent-form">
+          <h3>Purchase-intent fallback</h3>
+          <p>Stored locally in this browser. The public issue handoff excludes private email by default.</p>
+          <div class="input-grid compact">
+            <label>Email<input id="intent-email" type="email" placeholder="you@example.com"></label>
+            <label>Role/team<input id="intent-role" type="text" placeholder="Founder, support lead, CS, SRE, DevOps..."></label>
+            <label>Incident volume<input id="incident-volume" type="text" placeholder="Example: 3 customer-facing incidents per quarter"></label>
+            <label>Current update process<input id="current-process" type="text" placeholder="Example: Statuspage plus support macro"></label>
+            <label>Plan interest<select id="plan-interest"><option>Starter</option><option>Team</option></select></label>
+            <label>Willingness to pay<input id="willingness" type="text" placeholder="$19/month, $79/month, paid pilot..."></label>
+          </div>
+          <button class="button primary" type="submit">Request early access</button>
+          <p class="copy-status" id="intent-status" role="status" aria-live="polite"></p>
+          <div id="remote-intent" hidden>
+            <a class="button secondary" id="remote-intent-link" target="_blank" rel="noreferrer">Open public request</a>
+            <button class="button ghost" type="button" id="copy-remote-intent">Copy request details</button>
+            <p class="copy-status" id="remote-copy-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <p>Browser-local MVP. No monitoring integration, status-page OAuth, incident-management integration, support-ticket export, private log upload, customer list storage, customer email sending, security/legal/SLA advice, or root-cause guarantees.</p>
+      <a href="saas-incident-communication-template.html">SaaS incident communication template</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
